@@ -26,14 +26,26 @@
   font-size: 1.2rem;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: background 0.25s, color 0.2s;
 }
 
-.header-nav a:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(64, 32, 167, 0.5);
-}
 .header-nav a:hover {
-  background: #fff;
-  color: #212aa9;
+  color: #3a47d5;
+  transform: translateY(-2px) scale(1.05);
 }
+
+.signup-button {
+  background-color: #212aa9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 27px;
+}
+
+.header-nav .signup-button:hover {
+  background-color: #3a47d5;
+  transform: scale(1.05);
+}
+
+.header-nav .signup-button:hover *{
+  color: black;
+}
+
