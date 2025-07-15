@@ -9,8 +9,9 @@ function BurgerBackground() {
       <h1>
         Vi narucujete,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
-        <span className="imi-bold">IMI</span> dostavljamo🚗
+        <span className="imi-bold">IMI</span> dostavlja🚗
       </h1>
+      <button className="menu">🔍Istrazite nasu ponudu</button>
     </div>
   );
 }
