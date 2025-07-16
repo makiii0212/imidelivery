@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SignUpForm from './components/SignUpForm';
 import BurgerBackground from './components/BurgerBackground';
 import Burgers from './components/Burgers';
+import './App.css';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           </Routes>
         </main>
         <footer className="app-footer">
-          <small>© 2025 Some student from IMI :)</small>
+          <span>© 2025 | Institut za matematiku i informatiku</span>
         </footer>
       </div>
     </BrowserRouter>
