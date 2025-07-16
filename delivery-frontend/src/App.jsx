@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SignUpForm from './components/SignUpForm';
 import BurgerBackground from './components/BurgerBackground';
 import Burgers from './components/Burgers';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -13,14 +14,11 @@ function App() {
         <Header />
         <main className="app-main">
           <Routes>
-            <Route path="/" element={<><BurgerBackground /> <Burgers /></>}/>
+            <Route path="/" element={<><BurgerBackground /> <Burgers /> <Footer /></>}/>
             <Route path="/signup" element={<SignUpForm />} />
             // ...
           </Routes>
         </main>
-        <footer className="app-footer">
-          <span>© 2025 | Institut za matematiku i informatiku</span>
-        </footer>
       </div>
     </BrowserRouter>
   );
