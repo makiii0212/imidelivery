@@ -1,4 +1,3 @@
-import React from 'react';
 import burger from '../assets/beef-burger.jpg';
 import './BurgerBackground.css';
 
