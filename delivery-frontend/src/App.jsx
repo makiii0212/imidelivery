@@ -1,18 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import SignUpForm from './components/SignUpForm';
 import BurgerBackground from './components/BurgerBackground';
+import Burgers from './components/Burgers';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="app-container">
         <Header />
         <main className="app-main">
           <Routes>
-            <Route path="/" element={<BurgerBackground />} />
+            <Route path="/" element={<><BurgerBackground /> <Burgers /></>}/>
             <Route path="/signup" element={<SignUpForm />} />
             // ...
           </Routes>
@@ -21,7 +21,7 @@ function App() {
           <small>© 2025 Some student from IMI :)</small>
         </footer>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
