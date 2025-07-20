@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+import { CartContext } from './CartContext';
 import './Burgers.css';
 import BurgerCard from './BurgerCard';
 import burger1 from '../assets/beef-burger.jpg';
@@ -53,13 +55,17 @@ const burgers = [
 ];
 
 const Burgers = () => {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div className="burger-list">
-      {burgers.map((burger) => (
+      {burgers.map((burger, i) => (
         <BurgerCard
+          key={i}
           name={burger.name}
           image={burger.image}
           ingredients={burger.ingredients}
+          addToCart={addToCart}
         />
       ))}
     </div>
