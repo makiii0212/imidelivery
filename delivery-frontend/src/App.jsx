@@ -1,28 +1,32 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import Header from './components/Header';
-import SignUpForm from './components/SignUpForm';
-import BurgerBackground from './components/BurgerBackground';
-import Burgers from './components/Burgers';
-import Footer from './components/Footer';
+import { BrowserRouter, useLocation } from 'react-router-dom';
+import { CartProvider } from './components/CartContext';
+import React, { useEffect } from 'react';
+import AppRoutes from './App2';
 import './App.css';
+
+function AppWithTokenHandler() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token');
+    if (token) {
+      localStorage.setItem('token', token);
+      window.history.replaceState({}, document.title, '/');
+    }
+  }, [location]);
+
+  return <AppRoutes />;
+}
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <Header />
-        <main className="app-main">
-          <Routes>
-            <Route path="/" element={<><BurgerBackground /> <Burgers /> <Footer /></>}/>
-            <Route path="/signup" element={<SignUpForm />} />
-            // ...
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <AppWithTokenHandler />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
 export default App;
-
